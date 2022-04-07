@@ -5,8 +5,9 @@ import 'package:social_login/data/apis/member_api.dart';
 import 'package:social_login/data/apis/sign_api.dart';
 import 'package:social_login/data/repository/member_repository.dart';
 import 'package:social_login/providers/global_provider.dart';
+import 'package:social_login/providers/sign_in_provider.dart';
 import 'package:social_login/providers/splash_provider.dart';
-import 'package:social_login/repository/sign_repository.dart';
+import 'package:social_login/data/repository/sign_repository.dart';
 
 final GetIt di = GetIt.instance;
 final http.Client _client = http.Client();
@@ -34,6 +35,7 @@ Future initDependencies() async {
     ),
   );
   di.registerFactory(() => SplashProvider(signRepo: di<SignRepository>()));
+  di.registerFactory(() => SignInProvider(signRepo: di<SignRepository>()));
 
   return await di.allReady();
 }

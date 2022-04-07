@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_login/models/common/api_response.dart';
-import 'package:social_login/repository/sign_repository.dart';
+import 'package:social_login/data/repository/sign_repository.dart';
 
 class SplashProvider extends ChangeNotifier {
   final SignRepository signRepo;
